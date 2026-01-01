@@ -6,6 +6,11 @@ A small experimental setup where a BFF calls an upstream BFF over GraphQL, with 
 
 ![BFF-to-BFF architecture diagram](assets/1.png)
 
+## Rationale
+
+- Keep each BFF focused on its domain.
+- Show how one BFF can communicate with another via GraphQL.
+
 ## Walkthroughs
 
 **Upstream BFF (GraphiQL)**
