@@ -1,6 +1,6 @@
 # GraphQL BFF-to-BFF
 
-A small experimental setup demonstrating bidirectional GraphQL communication between two BFF services, with Redis backing the upstream service.
+A small experimental setup shows bidirectional GraphQL communication between two BFF services.
 
 ## Architecture
 
