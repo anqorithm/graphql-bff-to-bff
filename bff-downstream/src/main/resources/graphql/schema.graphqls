@@ -1,0 +1,57 @@
+type Query {
+  productSummary(id: ID!): ProductSummary
+  catalogOverview(filter: ProductFilter, sort: ProductSort, page: PageInput): CatalogOverview!
+}
+
+type ProductSummary {
+  id: ID!
+  name: String!
+  price: Float!
+  rating: Float!
+  available: Boolean!
+  tags: [String!]!
+  category: CategorySummary!
+  upstream: String!
+}
+
+type CategorySummary {
+  id: ID!
+  name: String!
+  productCount: Int!
+}
+
+input ProductFilter {
+  categoryId: ID
+  minPrice: Float
+  maxPrice: Float
+  text: String
+  available: Boolean
+}
+
+input PageInput {
+  size: Int = 10
+  offset: Int = 0
+}
+
+enum SortDirection {
+  ASC
+  DESC
+}
+
+enum ProductSortField {
+  NAME
+  PRICE
+  RATING
+}
+
+input ProductSort {
+  field: ProductSortField!
+  direction: SortDirection = ASC
+}
+
+type CatalogOverview {
+  items: [ProductSummary!]!
+  totalCount: Int!
+  averagePrice: Float!
+  categories: [CategorySummary!]!
+}
