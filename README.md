@@ -1,15 +1,19 @@
 # GraphQL BFF-to-BFF
 
-A small experimental setup where a BFF calls an upstream BFF over GraphQL, with Redis backing the upstream service.
+A small experimental setup demonstrating bidirectional GraphQL communication between two BFF services, with Redis backing the upstream service.
 
 ## Architecture
 
 ![BFF-to-BFF architecture diagram](assets/2.svg)
 
+Both BFFs can call each other over GraphQL:
+- **Downstream to Upstream**: Fetches raw product data, enriches with aggregations
+- **Upststream to Downstream**: Retrieves enriched/aggregated views
+
 ## Rationale
 
 - Keep each BFF focused on its domain.
-- Show how one BFF can communicate with another via GraphQL.
+- Show how BFFs can communicate bidirectionally via GraphQL.
 
 ## Walkthroughs
 
