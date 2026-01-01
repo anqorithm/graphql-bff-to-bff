@@ -2,6 +2,8 @@ type Query {
   product(id: ID!): Product
   products: [Product!]!
   searchProducts(filter: ProductFilter, sort: ProductSort, page: PageInput): ProductConnection!
+  downstreamProductSummary(id: ID!): ProductSummary
+  downstreamCatalogOverview(filter: ProductFilter, sort: ProductSort, page: PageInput): CatalogOverview!
 }
 
 type Product {
@@ -17,6 +19,30 @@ type Product {
 type Category {
   id: ID!
   name: String!
+}
+
+type ProductSummary {
+  id: ID!
+  name: String!
+  price: Float!
+  rating: Float!
+  available: Boolean!
+  tags: [String!]!
+  category: CategorySummary!
+  upstream: String!
+}
+
+type CategorySummary {
+  id: ID!
+  name: String!
+  productCount: Int!
+}
+
+type CatalogOverview {
+  items: [ProductSummary!]!
+  totalCount: Int!
+  averagePrice: Float!
+  categories: [CategorySummary!]!
 }
 
 input ProductFilter {

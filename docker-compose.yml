@@ -7,6 +7,7 @@ services:
     environment:
       REDIS_HOST: redis
       REDIS_PORT: 6379
+      DOWNSTREAM_GRAPHQL_URL: http://bff-downstream:8080/graphql
     depends_on:
       - redis
   bff-downstream:

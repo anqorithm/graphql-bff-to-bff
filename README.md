@@ -4,7 +4,7 @@ A small experimental setup where a BFF calls an upstream BFF over GraphQL, with 
 
 ## Architecture
 
-![BFF-to-BFF architecture diagram](assets/1.png)
+![BFF-to-BFF architecture diagram](assets/2.svg)
 
 ## Rationale
 
